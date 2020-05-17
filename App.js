@@ -34,8 +34,8 @@ const app = () => {
     updateList([...toDoList, goal]);
   };
 
-  const delFromList = function (key) {
-    updateList(toDoList.filter((task) => task != key));
+  const delFromList = function (name) {
+    updateList(toDoList.filter((task) => task != name));
   };
 
   return (
@@ -52,7 +52,7 @@ const app = () => {
           onPress={addToList}
         />
       </View>
-      <Text style={style.debug}>Tasks</Text>
+      <Text style={{ textAlign: 'center', fontSize: 20 }}>Tasks</Text>
       <View style={style.list}>
         {toDoList.map((task, index) => (
           <TaskView
@@ -89,7 +89,8 @@ const style = StyleSheet.create({
   debug: {
     borderWidth: 1,
     borderColor: 'black',
-    justifyContent: 'center',
+    marginTop: 5,
+    textAlign: 'center',
   },
 
   container: {
